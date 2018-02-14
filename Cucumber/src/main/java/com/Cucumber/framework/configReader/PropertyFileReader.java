@@ -6,12 +6,12 @@ import java.util.Properties;
 
 import org.apache.log4j.Level;
 
+import com.Cucumber.framework.utility.BrowserType;
 import com.Cucumber.framework.utility.ResourceHelper;
 
 public class PropertyFileReader {
 
 	private Properties pro= null;
-	
 	
 	public PropertyFileReader() {
 		
@@ -25,7 +25,8 @@ public class PropertyFileReader {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
+		
+
 	}
 	
 	public String getURL() {
@@ -33,9 +34,10 @@ public class PropertyFileReader {
 		return pro.getProperty("URL");
 	}
 	
-	public String getBrowser() {
+	public BrowserType getBrowser() {
 		
-		return pro.getProperty("Browser");
+		return BrowserType.valueOf(pro.getProperty("Browser"));
+	
 	}
 	
 	public String getUsername() {
@@ -87,6 +89,7 @@ public class PropertyFileReader {
 		
 		
 	}
+	
 	
 }
 
